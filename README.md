@@ -1,4 +1,4 @@
-# bolita-dexcom
+# XiaoZhi AI Voice Chat Robot Ball ESP32-S3 + Dexcom Glucose Monitor
 Diabetes monitor and voice assistant for the Xiaozhi Bolita V2
 # Bolita Dexcom Monitor 🩺
 A custom package for the Xiaozhi "Bolita" to display real-time Dexcom glucose levels.
