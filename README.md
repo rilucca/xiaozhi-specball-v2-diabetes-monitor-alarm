@@ -16,4 +16,4 @@ dexcom_username: "YOUR_DEXCOM_USER"  # Example: locolucca
 
 # 🍄 Bolita Mario Dexcom (Beta 1)
 
-![Mario Bolita en Acción] Bolita Hight.jpg
+<img src="BolitaHight.jpg" width="200">
