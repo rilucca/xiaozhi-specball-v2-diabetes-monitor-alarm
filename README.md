@@ -8,7 +8,7 @@ A custom package for the Xiaozhi "Bolita" to display real-time Dexcom glucose le
 ### 📸 Bolita en Acción
 <p align="center">
   <img src="BolitaHight.jpg" width="220" alt="Bolita Alerta 16.2">
-  <img src="BolitaMarioListen.jpg" width="220" alt="Mario Escuchando">
+  <img src="BolitaMarioL.jpg" width="220" alt="Mario Escuchando">
 </p>
 
 ### 📝 Quick Setup (3 Steps)
