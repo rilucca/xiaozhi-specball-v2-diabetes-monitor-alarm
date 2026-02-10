@@ -14,3 +14,6 @@ wifi_ssid: "YOUR_WIFI_NAME"
 wifi_password: "YOUR_WIFI_PASSWORD"
 dexcom_username: "YOUR_DEXCOM_USER"  # Example: locolucca
 
+# 🍄 Bolita Mario Dexcom (Beta 1)
+
+![Mario Bolita en Acción](Bolita Hight.jpg)
