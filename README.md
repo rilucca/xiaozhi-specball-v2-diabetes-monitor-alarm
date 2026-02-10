@@ -31,6 +31,16 @@ A custom package for the Xiaozhi "Bolita" to display real-time Dexcom glucose le
 *   **Official Integration:** The data is pulled from the [Official Dexcom Integration](https://www.home-assistant.io) within Home Assistant.
 *   **Cloud-Based:** Data is retrieved from **Dexcom Cloud Servers**, not directly from your smartphone or transmitter via Bluetooth.
 *   **Internet Dependency:** A stable internet connection is required for both your Home Assistant server and the "Bolita" device to display real-time glucose values.
+---
+
+## ⚙️ Technical Beta Notes (Read Before Use)
+
+**Current Version:** Beta 1
+
+*   **Units:** This project is currently hardcoded for **mmol/L**. If your Dexcom is set to `mg/dL`, the color rings and logic **will not work correctly**.
+*   **Thresholds:** The glucose color levels (Yellow/Red) are currently fixed in the YAML code. Future versions will aim to make these configurable via Home Assistant helpers.
+*   **Audio Alarms:** Sound alerts and notifications are **not** managed by the ESP32 code. You must configure your automations and audio triggers directly within **Home Assistant**.
+*   **Hardware:** Optimized specifically for the Xiaozhi "Bolita" V2 (S3 Box) with a round 240x240 LCD.
 
 ---
 
