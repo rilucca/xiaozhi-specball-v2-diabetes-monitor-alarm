@@ -12,6 +12,28 @@ A custom package for the Xiaozhi "Bolita" to display real-time Dexcom glucose le
   <img src="BolitaMarioL.jpg" width="220" alt="Mario Escuchando">
   <img src="BolitaDrop.jpg" width="220" alt="Bolita Bajando">
 </p>
+---
+
+## ⚠️ IMPORTANT: MEDICAL DISCLAIMER
+
+**THIS PROJECT IS FOR INFORMATIONAL AND EDUCATIONAL PURPOSES ONLY.**
+
+*   **NOT a Medical Device:** This "Bolita" display is not a replacement for the official Dexcom app or any medically approved monitoring hardware.
+*   **Treatment Decisions:** NEVER make medical treatment decisions (such as insulin dosing or glucose corrections) based solely on the information displayed on this device.
+*   **Mandatory Verification:** You MUST always consult your official Dexcom smartphone app or receiver for the official reading before taking any medical action.
+*   **Use at Your Own Risk:** The author is not responsible for data transmission errors, network delays, or hardware failures that may result in incorrect readings.
+------
+
+## ☁️ Connectivity & Data Source
+
+**This project requires an active Home Assistant (HA) installation to function.**
+
+*   **Official Integration:** The data is pulled from the [Official Dexcom Integration](https://www.home-assistant.io) within Home Assistant.
+*   **Cloud-Based:** Data is retrieved from **Dexcom Cloud Servers**, not directly from your smartphone or transmitter via Bluetooth.
+*   **Internet Dependency:** A stable internet connection is required for both your Home Assistant server and the "Bolita" device to display real-time glucose values.
+
+---
+
 
 ### 📝 Quick Setup (3 Steps)
 
