@@ -6,7 +6,10 @@ A custom package for the Xiaozhi "Bolita" to display real-time Dexcom glucose le
 # 🍄 Bolita Mario Dexcom (Beta 1)
 
 ### 📸 Bolita en Acción
-<img src="BolitaHight.jpg" width="220"> <img src="BolitaMarioListen.jpg" width="220">
+<p align="center">
+  <img src="BolitaHight.jpg" width="220" alt="Bolita Alerta 16.2">
+  <img src="BolitaMarioListen.jpg" width="220" alt="Mario Escuchando">
+</p>
 
 ### 📝 Quick Setup (3 Steps)
 
