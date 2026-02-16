@@ -1,1 +1,1 @@
-Creando un directorio oculto para las imagenes del Readme
+Directorio para las imagenes del Readme.md
