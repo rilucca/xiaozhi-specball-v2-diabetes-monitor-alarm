@@ -3,7 +3,7 @@ Diabetes monitor and voice assistant for the Xiaozhi Bolita V2
 # Bolita Dexcom Monitor 🩺
 A custom package for the Xiaozhi "Bolita" to display real-time Dexcom glucose levels.
 
-# 🍄 Bolita Mario Dexcom (Beta 1)
+# 🍄 Bolita Mario Dexcom (V 1.0.0)
 
 ### 📸 Bolita en Acción
 <p align="center">
@@ -13,6 +13,7 @@ A custom package for the Xiaozhi "Bolita" to display real-time Dexcom glucose le
   <img src=".assets/BolitaDrop.jpg" width="220" alt="Bolita Bajando">
   <img src=".assets/BolitaLow.jpg" width="220" alt="Bolita Baja">
   <img src=".assets/BallV2TouchBattery.png" width="220" alt="Bolita AliExpress">
+  <img src=".assets/HAEspHome.png" width="220" alt="HAEspHome">
 </p>
 ---
 
@@ -86,6 +87,21 @@ This "Bolita" version is built on ESPHome, offering a robust and flexible altern
 - **WiFi Stability:** Optimized for unified 2.4/5GHz routers (like Telus) using specific ESP32-S3 handshake logic.
 - **Captive Portal:** Includes a fallback AP mode for initial Wi-Fi configuration if the main network is unreachable.
 - **OTA Updates:** Supports Over-The-Air updates—no need to plug it into the computer once installed.
+
+### 📊 Version 1.0: Dynamic Glucose Thresholds (mmol/L)
+- This version introduces Dynamic Sliders in Home Assistant, allowing you to change your alert levels without editing the YAML code or reflashing the ball.
+Key Features:
+Real-time Updates: Move the slider in Home Assistant and the Xiaozhi Ball updates its LED colors and alerts instantly.
+Optimized for mmol/L: Designed for users in Canada, the UK, and other regions using mmol/L (Standard 0.1 increments).
+Persistent Settings: Your chosen thresholds are saved on the device; if the ball restarts, it remembers your last settings.
+How to Use:
+After flashing this YAML, go to your Home Assistant Dashboard.
+Add an Entities Card.
+Search for and add:
+number.glucose_low_threshold (e.g., set to 3.9 mmol/L)
+number.glucose_high_threshold (e.g., set to 10.0 mmol/L)
+number.glucose_max_alarm (e.g., set to 15.0 mmol/L)
+Slide to your preferred levels. The Ball's display logic will now use these live values to determine if the circles should be Yellow/Red, Yellow, or Red.
 ---
 
 
