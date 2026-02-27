@@ -13,7 +13,6 @@ A custom package for the Xiaozhi "Bolita" to display real-time Dexcom glucose le
   <img src=".assets/BolitaDrop.jpg" width="220" alt="Bolita Bajando">
   <img src=".assets/BolitaLow.jpg" width="220" alt="Bolita Baja">
   <img src=".assets/BallV2TouchBattery.png" width="220" alt="Bolita AliExpress">
-  <img src=".assets/HAEsphome.png" width="220" alt="HAEspHome">
 </p>
 ---
 
@@ -90,18 +89,20 @@ This "Bolita" version is built on ESPHome, offering a robust and flexible altern
 
 ### 📊 Version 1.0: Dynamic Glucose Thresholds (mmol/L)
 - This version introduces Dynamic Sliders in Home Assistant, allowing you to change your alert levels without editing the YAML code or reflashing the ball.
-Key Features:
-Real-time Updates: Move the slider in Home Assistant and the Xiaozhi Ball updates its LED colors and alerts instantly.
-Optimized for mmol/L: Designed for users in Canada, the UK, and other regions using mmol/L (Standard 0.1 increments).
-Persistent Settings: Your chosen thresholds are saved on the device; if the ball restarts, it remembers your last settings.
-How to Use:
+- <img src=".assets/HAEsphome.png" width="220" alt="HAEspHome">
+- Key Features: Real-time Updates: Move the slider in Home Assistant and the Xiaozhi Ball updates its LED colors and alerts instantly.
+- Optimized for mmol/L: Designed for users in Canada, the UK, and other regions using mmol/L (Standard 0.1 increments).
+- Persistent Settings: Your chosen thresholds are saved on the device; if the ball restarts, it remembers your last settings.
+- How to Use:
 After flashing this YAML, go to your Home Assistant Dashboard.
-Add an Entities Card.
-Search for and add:
-number.glucose_low_threshold (e.g., set to 3.9 mmol/L)
-number.glucose_high_threshold (e.g., set to 10.0 mmol/L)
-number.glucose_max_alarm (e.g., set to 15.0 mmol/L)
-Slide to your preferred levels. The Ball's display logic will now use these live values to determine if the circles should be Yellow/Red, Yellow, or Red.
+- See the Added Entities Card Slyders in your esp32-s3-devkitc-1.
+- Search for and select:
+- - number.glucose_low_threshold (e.g., set to 3.9 mmol/L) less than; red ring
+- - number.glucose_high_threshold (e.g., set to 10.0 mmol/L) more than; yellow ring
+- - number.glucose_max_high_alarm (e.g., set to 15.0 mmol/L) more than; add a red ring to the yellow
+- Slide to your preferred levels.
+- The Ball's display logic will now use these live values to determine if the circles should be Red, Yellow, or Yellow/Red.
+- Note: You set your voice alarm or sounds via Automations & Scenes and can be different values. 
 ---
 
 
