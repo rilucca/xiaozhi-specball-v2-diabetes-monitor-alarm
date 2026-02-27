@@ -1110,6 +1110,7 @@ display:
             Color red = Color(255, 0, 0);
             Color yellow = Color(255, 255, 0);
             Color white = Color(255, 255, 255);
+            Color green = Color(0, 255, 0);
             Color current_color = white;
 
             // Determinar color de los círculos según sliders
@@ -1124,6 +1125,10 @@ display:
             } else if (id(glucose_value).state >= id(dex_high_mmol).state) {
               current_color = yellow;
               it.circle(it.get_width() / 2, it.get_height() / 2, 110, yellow);
+            } else {
+              // --- NEW GREEN CIRCLE (Between Low and High) ---
+              current_color = green;
+              it.circle(it.get_width() / 2, it.get_height() / 2, 110, green);
             }
 
             // Dibujar Número (Ahora dentro del bloque para reconocer 'white')
