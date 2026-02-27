@@ -13,7 +13,7 @@ A custom package for the Xiaozhi "Bolita" to display real-time Dexcom glucose le
   <img src=".assets/BolitaDrop.jpg" width="220" alt="Bolita Bajando">
   <img src=".assets/BolitaLow.jpg" width="220" alt="Bolita Baja">
   <img src=".assets/BallV2TouchBattery.png" width="220" alt="Bolita AliExpress">
-  <img src=".assets/HAEspHome.png" width="220" alt="HAEspHome">
+  <img src=".assets/HAEsphome.png" width="220" alt="HAEspHome">
 </p>
 ---
 
