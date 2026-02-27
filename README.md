@@ -128,7 +128,7 @@ wifi_password: "YOUR_WIFI_PASSWORD"
 # Replace (locolucca) with your actual Dexcom username
 dexcom_username: "locolucca"
 
-# 3. Alarm values settings in mmol/L  (red below set point) (yellow above and Yellow & Red above)
+# 3. Alarm values settings in mmol/L  (can be re-adjusted via Home Assistant slyders later)
 glucose_min_red: "4.0"
 glucose_pre_high_yellow: "10.0"
 glucose_max_alarm: "14.0"
