@@ -52,7 +52,7 @@ The visual ring logic is currently set as follows:
 - **🔴 Red Ring:** Glucose below **4.0** mmol/L.
 - **🟡 Yellow Ring:** Glucose above **10.0** mmol/L.
 - **🔴/🟡 Double Red/Yellow Ring:** Glucose above **14.0** mmol/L.
-- **Manual Adjustments:** To change these thresholds, edit the `Ball-v2-3Mario.yaml` file around **line 1111** and modify the values manually.
+- **Manual Adjustments:** To change these thresholds, move slyders in HA card.
 
 ### 🔊 Audio & Automation Tips:
 - **Audio Alarms:** Sound notifications must be triggered via **Home Assistant automations**.
@@ -88,8 +88,10 @@ This "Bolita" version is built on ESPHome, offering a robust and flexible altern
 - **OTA Updates:** Supports Over-The-Air updates—no need to plug it into the computer once installed.
 
 ### 📊 Version 1.0: Dynamic Glucose Thresholds (mmol/L)
-- This version introduces Dynamic Sliders in Home Assistant, allowing you to change your alert levels without editing the YAML code or reflashing the ball.
-- <img src=".assets/HAEsphome.png" width="220" alt="HAEspHome">
+- This version introduces Dynamic Sliders in Home Assistant, allowing you to change your alert colors levels without editing the YAML code or reflashing the ball.
+<p align="center">
+  <img src=".assets/HAEsphome.png" width="440" alt="HAEspHome">
+</p>
 - Key Features: Real-time Updates: Move the slider in Home Assistant and the Xiaozhi Ball updates its LED colors and alerts instantly.
 - Optimized for mmol/L: Designed for users in Canada, the UK, and other regions using mmol/L (Standard 0.1 increments).
 - Persistent Settings: Your chosen thresholds are saved on the device; if the ball restarts, it remembers your last settings.
