@@ -99,13 +99,13 @@ This "Bolita" version is built on ESPHome, offering a robust and flexible altern
 - **Persistent Settings:** Your chosen thresholds are saved on the device; if the ball restarts, it remembers your last settings.
 - **How to Use:**
 After flashing this YAML, go to your Home Assistant Dashboard.
-- See the Added Entities Card Slyders in your esp32-s3-devkitc-1.
+ See the Added Entities Card Slyders in your esp32-s3-devkitc-1.
 - Search for and select:
- - number.glucose_low_threshold (e.g., set to 3.9 mmol/L) less than; red ring
- - number.glucose_high_threshold (e.g., set to 10.0 mmol/L) more than; yellow ring
- - number.glucose_max_high_alarm (e.g., set to 15.0 mmol/L) more than; add a red ring to the yellow
+  number.glucose_low_threshold (e.g., set to 3.9 mmol/L) less than; red ring
+  number.glucose_high_threshold (e.g., set to 10.0 mmol/L) more than; yellow ring
+  number.glucose_max_high_alarm (e.g., set to 15.0 mmol/L) more than; add a red ring to the yellow
 - **Slide to your preferred levels.**
-- The Ball's display logic will now use these live values to determine if the circles should be Red, Yellow, or Yellow/Red.
+ The Ball's display logic will now use these live values to determine if the circles should be Red, Yellow, or Yellow/Red.
 - **Note1:** You set your voice alarm or sounds via Automations & Scenes and can be different values.
 - **Note2**: Slyders are in spanish, revision 1.0.1 will be corrected.
 - **Note3**: Values are in mmol/L (because I am in Canada) but will create a new swith to select US /dL V 1.1.0
