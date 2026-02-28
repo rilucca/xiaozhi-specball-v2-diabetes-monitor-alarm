@@ -236,7 +236,7 @@ sensor:
 
   - platform: homeassistant
     id: glucose_value
-    entity_id: ${glucose_value_entity}  # It fills in "sensor.cocolucca_glucose_value"
+    entity_id: ${glucose_value_entity}  # It fills in "sensor.locolucca_glucose_value"
     internal: true
     on_value:
       then:
@@ -254,6 +254,10 @@ touchscreen:
     id: touch_dp
     on_touch:
       then:
+        # 1. NEW: Mute the Alarm and Turn off the Light Star
+        - lambda: 'id(alarm_muted) = true;'
+        - light.turn_off: led
+        # 2. Existing functionality:
         - binary_sensor.template.publish:
             id: touch_input
             state: ON
@@ -351,7 +355,7 @@ light:
     default_transition_length: 250ms
   - platform: esp32_rmt_led_strip
     id: led
-    name: none
+    name: "Light Star"
     disabled_by_default: false
     entity_category: config
     pin: GPIO${led_pin}
@@ -932,6 +936,10 @@ globals:
     type: bool
     restore_value: no
     initial_value: "false"
+  - id: alarm_muted
+    type: bool
+    restore_value: no
+    initial_value: 'false'
 
 image:
   - file: "assets_round/error.png"
@@ -1231,7 +1239,7 @@ text_sensor:
     id: text_response
   - platform: homeassistant
     id: glucose_trend
-    entity_id: ${glucose_trend_entity}  # It fills in "sensor.cocolucca_glucose_trend"
+    entity_id: ${glucose_trend_entity}  # It fills in "sensor.locolucca_glucose_trend"
     internal: true
     on_value:
       then:
@@ -1243,7 +1251,7 @@ text_sensor:
     
 number:
   - platform: template
-    name: "Glucosa Baja"
+    name: "Glucose Low"
     id: dex_low_mmol
     min_value: 3.0
     max_value: 6.0
@@ -1252,7 +1260,7 @@ number:
     optimistic: true
     restore_value: true
   - platform: template
-    name: "Glucosa Alta"
+    name: "Glucose High"
     id: dex_high_mmol
     min_value: 8.0
     max_value: 12.0
@@ -1261,7 +1269,7 @@ number:
     optimistic: true
     restore_value: true
   - platform: template
-    name: "Glucosa Maxima"
+    name: "Glucose Top"
     id: dex_max_mmol
     min_value: 12.0
     max_value: 20.0
@@ -1270,3 +1278,49 @@ number:
     optimistic: true
     restore_value: true
 
+interval:
+  - interval: 1s
+    then:
+      - lambda: |-
+          static float last_low = 0;
+          static float last_high = 0;
+          static float last_top = 0;
+
+          // 1. REFRESH SCREEN IF SLIDERS MOVE
+          if (id(dex_low_mmol).state != last_low || id(dex_high_mmol).state != last_high || id(dex_max_mmol).state != last_top) {
+            last_low = id(dex_low_mmol).state;
+            last_high = id(dex_high_mmol).state;
+            last_top = id(dex_max_mmol).state;
+            id(s3_box_lcd).update();
+          }
+
+          // 2. LIGHT STAR LOGIC (Visual Alerts)
+          if (id(glucose_value).has_state()) {
+            float g_val = id(glucose_value).state;
+            bool out_of_range = (g_val < id(dex_low_mmol).state || g_val >= id(dex_high_mmol).state);
+
+            // AUTO-RESET: Si vuelve a rango seguro, quitamos el silencio para la próxima vez
+            if (!out_of_range) {
+              id(alarm_muted) = false;
+            }
+
+            // Solo actuamos sobre el LED si NO está silenciado por el toque de pantalla
+            if (!id(alarm_muted)) {
+              auto call = id(led).make_call();
+              if (g_val < id(dex_low_mmol).state || g_val >= id(dex_max_mmol).state) {
+                // DANGER: Red Fast Pulse
+                call.set_state(true);
+                call.set_rgb(1.0, 0.0, 0.0);
+                call.set_effect("Fast Pulse");
+              } else if (g_val >= id(dex_high_mmol).state) {
+                // WARNING: Yellow Slow Pulse
+                call.set_state(true);
+                call.set_rgb(1.0, 1.0, 0.0);
+                call.set_effect("Slow Pulse");
+              } else {
+                // SAFE: Apagar LED
+                call.set_state(false);
+              }
+              call.perform();
+            }
+          }
