@@ -3,7 +3,7 @@ Diabetes monitor and voice assistant for the Xiaozhi Bolita V2
 # Bolita Dexcom Monitor 🩺
 A custom package for the Xiaozhi "Bolita" to display real-time Dexcom glucose levels.
 
-# 🍄 Bolita Mario Dexcom (V 1.0.0)
+# 🍄 Bolita Mario Dexcom (V 1.2.0)
 
 ### 📸 Bolita en Acción
 <p align="center">
