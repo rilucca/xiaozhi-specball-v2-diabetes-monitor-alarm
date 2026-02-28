@@ -123,7 +123,7 @@ This "Bolita" version is built on ESPHome, offering a robust and flexible altern
  The Ball's display logic will now use these live values to determine if the circles should be Red, Yellow, or Yellow/Red.
   - **Note1:** You set your voice alarm or sounds via Automations & Scenes and can be different values.
   - **Note2**: Slyders are in spanish, revision 1.0.1 will be corrected.
-  - **Note3**: Values are in mmol/L (because I am in Canada) but will create a new swith to select US /dL V 1.1.0
+  - **Note3**: Values are in mmol/L (because I am in Canada) but will create a new swith to select US /dL V 2.0.0
  
 ---
 
