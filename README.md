@@ -5,7 +5,7 @@ A custom package for the Xiaozhi "Bolita" to display real-time Dexcom glucose le
 
 # 🍄 Bolita Mario Dexcom (V 1.2.0)
 
-### 📸 Bolita en Acción
+### 📸 Bolita in Action
 <p align="center">
   <img src=".assets/Normal.png" width="220" alt="Bolita Normal">
   <img src=".assets/BolitaHight.jpg" width="220" alt="Bolita Alerta 16.2">
@@ -37,7 +37,7 @@ A custom package for the Xiaozhi "Bolita" to display real-time Dexcom glucose le
 
 ## ⚙️ Technical Beta Notes (Read Before Use)
 
-**Current Version:** Beta 1
+**Current Version:** V 1.2.0
 
 *   **Units:** This project is currently hardcoded for **mmol/L**. If your Dexcom is set to `mg/dL`, the color rings and logic **will not work correctly**.
 *   **Thresholds:** The glucose color levels (Yellow/Red) are currently fixed in the YAML code. Future versions will aim to make these configurable via Home Assistant helpers.
@@ -48,7 +48,7 @@ A custom package for the Xiaozhi "Bolita" to display real-time Dexcom glucose le
 **Current Version:** Beta V1 (Optimized for **mmol/L**)
 
 ### 🎨 Glucose Color Thresholds:
-The visual ring logic is currently set as follows:
+The visual ring logic initially, is currently set as follows:
 - **🔴 Red Ring:** Glucose below **4.0** mmol/L.
 - **🟡 Yellow Ring:** Glucose above **10.0** mmol/L.
 - **🔴/🟡 Double Red/Yellow Ring:** Glucose above **14.0** mmol/L.
