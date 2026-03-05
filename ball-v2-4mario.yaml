@@ -236,15 +236,16 @@ sensor:
 
   - platform: homeassistant
     id: glucose_value
-    entity_id: ${glucose_value_entity}  # It fills in "sensor.locolucca_glucose_value"
+    entity_id: ${glucose_value_entity}
     internal: true
     on_value:
       then:
-        - if:
-            condition:
-              lambda: 'return !id(va).is_running();'
-            then:
-              - component.update: s3_box_lcd
+        - lambda: |-
+            // If the Assistant isn't actively listening or speaking, 
+            // we force the screen to refresh the new Dexcom value.
+            if (!id(va).is_running()) {
+              id(s3_box_lcd).update();
+            }
 
 touchscreen:
   - platform: cst816
@@ -1248,7 +1249,6 @@ text_sensor:
               lambda: 'return !id(va).is_running();'
             then:
               - component.update: s3_box_lcd
-    
 number:
   - platform: template
     name: "Glucose Low"
@@ -1259,6 +1259,14 @@ number:
     initial_value: 3.9
     optimistic: true
     restore_value: true
+    on_value:
+      then:
+        - if:
+            condition:
+              lambda: 'return !id(va).is_running();'
+            then:
+              - component.update: s3_box_lcd
+
   - platform: template
     name: "Glucose High"
     id: dex_high_mmol
@@ -1268,6 +1276,14 @@ number:
     initial_value: 10.0
     optimistic: true
     restore_value: true
+    on_value:
+      then:
+        - if:
+            condition:
+              lambda: 'return !id(va).is_running();'
+            then:
+              - component.update: s3_box_lcd
+
   - platform: template
     name: "Glucose Top"
     id: dex_max_mmol
@@ -1277,6 +1293,13 @@ number:
     initial_value: 15.0
     optimistic: true
     restore_value: true
+    on_value:
+      then:
+        - if:
+            condition:
+              lambda: 'return !id(va).is_running();'
+            then:
+              - component.update: s3_box_lcd
 
 interval:
   - interval: 1s
