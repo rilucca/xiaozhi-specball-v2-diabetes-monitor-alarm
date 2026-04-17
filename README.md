@@ -1,3 +1,6 @@
+NOTE: Display will be black if use ESPHome version 2026.4 (use 2026.3 instead) wait until I found a display platform that replace ili9xx that has been deprecated.
+NOTA: ESPHome modificó su forma de manejar los display en la versión 2026.4 haciendo que la ili9xxx quede obsoleta, pero que la versión que la reemplaza no funciona (la mipi_spy ) si la uso, el display no muestra los colores correctos. Esperemos a que ellos resuelvan y mientras.. seguimos con la versión 2026.3
+
 # ESPHome Assistant, XiaoZhi AI Voice Chat Robot SpecBall ESP32-S3 1.28 inch LCD N16R8 + Dexcom Glucose Monitor
 Diabetes monitor and voice assistant for the Xiaozhi Bolita V2
 # Bolita Dexcom Monitor 🩺
