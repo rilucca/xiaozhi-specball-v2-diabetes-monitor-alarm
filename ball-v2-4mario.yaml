@@ -165,7 +165,7 @@ wifi:
   power_save_mode: NONE  #For unified 2.4/5Ghz routers
   ap:
     ssid: "Ball v2 Hotspot"
-    password: "RZ7D3EzJdPM6"
+    password: "PasswordV2"
   on_connect:
     - script.execute: draw_display
   on_disconnect:
